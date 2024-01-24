@@ -6,5 +6,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class GetSurveyResponse {
-    private Long Id;
+    private Long id;
+
+    private String title;
 }

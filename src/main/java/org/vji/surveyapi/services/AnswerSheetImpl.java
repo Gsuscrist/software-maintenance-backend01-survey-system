@@ -12,6 +12,10 @@ import org.vji.surveyapi.repositories.IAnswerSheetRepository;
 import org.vji.surveyapi.services.interfaces.IAnswerSheetService;
 import org.vji.surveyapi.services.interfaces.ISurveyService;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class AnswerSheetImpl implements IAnswerSheetService {
     private final IAnswerSheetRepository repository;
@@ -44,6 +48,12 @@ public class AnswerSheetImpl implements IAnswerSheetService {
                 .success(Boolean.TRUE)
                 .httpStatus(HttpStatus.OK)
                 .build();
+    }
+
+
+    @Override
+    public List<AnswerSheet> getAllFrom(Long surveyId){
+        return new ArrayList<>(repository.getAllFrom(surveyId));
     }
 
     @Override

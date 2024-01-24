@@ -62,13 +62,16 @@ public class SurveyServiceImpl implements ISurveyService {
 
 
     private Survey from(CreateSurveyRequest request){
-        return new Survey();
+        Survey survey = new Survey();
+        survey.setTitle(request.getTitle());
+        return survey;
     }
 
 
     private GetSurveyResponse from(Survey survey){
         GetSurveyResponse response = new GetSurveyResponse();
         response.setId(survey.getId());
+        response.setTitle(survey.getTitle());
         return response;
     }
 

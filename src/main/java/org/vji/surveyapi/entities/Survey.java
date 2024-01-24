@@ -14,6 +14,8 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+
 
     //one survey to many question
     @OneToMany(mappedBy = "survey")
@@ -22,6 +24,9 @@ public class Survey {
     //one survey to many rewards
     @OneToMany(mappedBy = "survey")
     private Set<Reward> rewards;
+
+    @OneToMany(mappedBy = "survey")
+    private Set<Response> responses;
 
 
     @OneToMany(mappedBy = "survey")

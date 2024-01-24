@@ -4,15 +4,21 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @Getter @Setter
-@Table(name="answer_sheet")
-public class AnswerSheet {
+@Table(name = "responses")
+public class Response {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
+
+    private  String name;
+
+    private String lastname;
+
+    private Long  phoneNumber;
+
+    private String email;
 
     private char[] answers;
 
